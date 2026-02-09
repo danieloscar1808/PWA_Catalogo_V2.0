@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo Futurista 2.0 - PWA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <img src="icon-192.png" class="header-logo" alt="logo">
+    <h1 class="app-title">Catálogo</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Importar Catálogo</h2>
+      <input type="file" id="importFile" accept="application/json">
+    </section>
+
+    <section class="card">
+      <h2>Nuevo Item</h2>
+      <form id="addForm" class="form-grid">
+        <input type="text" id="addName" placeholder="Nombre" required>
+        <input type="number" id="addPrice" placeholder="Precio" required>
+        <select id="addCategory" required>
+          <option value="">Categoría</option>
+          <option value="general">General</option>
+          <option value="aire acondicionado split">Aire Acondicionado</option>
+          <option value="eléctrico">Eléctrico</option>
+          <option value="solar">Solar</option>
+        </select>
+        <button type="submit" class="btn-primary">Agregar</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Listado</h2>
+      <div id="itemsList" class="items-list"></div>
+    </section>
+  </main>
+
+  <button id="exportBtn" class="fab">Exportar</button>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>
