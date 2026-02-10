@@ -1,17 +1,40 @@
-/* ======== ESTÉTICA FUTURISTA 2.0 - MOBILE FIRST ======== */
-body{margin:0;background:#0A0F1F;font-family:"Segoe UI",sans-serif;color:white;}
-.app-header{display:flex;align-items:center;padding:12px 15px;background:rgba(0,229,255,0.1);border-bottom:1px solid rgba(0,229,255,0.3);}
-.header-logo{width:46px;margin-right:10px;filter:drop-shadow(0 0 6px #00e5ff);}
-.app-title{font-size:22px;text-shadow:0 0 6px #00e5ff;}
-main{padding:12px;}
-.card{background:rgba(255,255,255,0.06);padding:16px;margin-bottom:18px;border-radius:14px;border:1px solid rgba(0,229,255,0.25);backdrop-filter:blur(10px);box-shadow:0 0 14px rgba(0,229,255,0.15);animation:fadeIn .6s ease;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-input,select{width:100%;padding:14px;margin-bottom:12px;border:1px solid rgba(0,229,255,0.5);background:rgba(255,255,255,0.08);border-radius:10px;color:white;font-size:16px;}
-.btn-primary{padding:16px;width:100%;background:linear-gradient(180deg,#00e5ff,#00bcd4);border:none;border-radius:12px;color:black;font-size:17px;font-weight:bold;box-shadow:0 4px #0097a7,0 0 10px #00e5ff;transition:.2s;}
-.btn-primary:active{transform:translateY(3px);box-shadow:0 1px #0097a7;}
-.items-list{display:flex;flex-direction:column;gap:12px;}
-.item-card{padding:14px;background:rgba(255,255,255,0.08);border-radius:12px;border:1px solid rgba(0,229,255,0.3);animation:fadeIn .4s ease;}
-.inline-input{width:100%;padding:12px;margin-bottom:10px;border-radius:10px;border:1px solid rgba(0,229,255,0.5);background:rgba(255,255,255,0.1);color:white;font-size:16px;}
-.inline-input:focus{border-color:#00e5ff;box-shadow:0 0 12px #00e5ff;}
-.btn-delete{padding:10px;background:#ff4f4f;color:white;width:100%;border:none;border-radius:10px;font-weight:bold;box-shadow:0 3px #b00000;}
-.fab{position:fixed;bottom:22px;right:22px;background:#00e5ff;border:none;color:#000;padding:22px;font-weight:bold;border-radius:50px;box-shadow:0 0 18px #00e5ff;font-size:15px;}
+/* ===== CAMPOS UNIFICADOS ===== */
+
+input, select, .inline-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+
+  border: 1px solid rgba(0,229,255,0.5);
+  background: rgba(255,255,255,0.10);
+  color: white;
+  font-size: 16px;
+
+  border-radius: 10px;
+
+  /* Fuerza mismo alto en Android/iOS */
+  appearance: none;        /* quita estilos del sistema */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* alineación uniforme */
+  display: flex;
+  align-items: center;
+
+  /* transición suave */
+  transition: 0.25s ease;
+}
+
+/* Glow al enfocar */
+input:focus, select:focus, .inline-input:focus {
+  border-color: #00e5ff;
+  box-shadow: 0 0 12px #00e5ff;
+  transform: scale(1.02);
+}
+
+/* ===== FIX VISUAL PARA SELECT ===== */
+select {
+  background: rgba(255,255,255,0.10) url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' width='18' height='18' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 14px center;
+  padding-right: 44px;  /* espacio para flecha */
+  cursor: pointer;
+}
