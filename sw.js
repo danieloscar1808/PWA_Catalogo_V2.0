@@ -1,53 +1,53 @@
-const CACHE_VERSION = "v2"; // Cambiar número cada vez que modifiques la app
-const CACHE_NAME = "cat-cache-" + CACHE_VERSION;
+const CACHE_NAME = "cat-cache";
 
-const FILES_TO_CACHE = [
+// Archivos básicos mínimos
+const CORE_FILES = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
-  "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png",
-  "./splash.png"
+  "./manifest.json"
 ];
 
 // Instalación
 self.addEventListener("install", event => {
-  self.skipWaiting(); // Activa inmediatamente el nuevo SW
-
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(FILES_TO_CACHE))
+      .then(cache => cache.addAll(CORE_FILES))
   );
+  self.skipWaiting();
 });
 
 // Activación
 self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key); // Borra versiones viejas
-          }
-        })
-      );
-    })
-  );
-
-  return self.clients.claim(); // Toma control inmediato
+  event.waitUntil(self.clients.claim());
 });
 
-// Fetch
+// Estrategia Stale While Revalidate
 self.addEventListener("fetch", event => {
+
+  if (event.request.method !== "GET") return;
+
   event.respondWith(
-    fetch(event.request)
-      .then(response => {
-        return response;
-      })
-      .catch(() => {
-        return caches.match(event.request);
-      })
+
+    caches.match(event.request).then(cachedResponse => {
+
+      const networkFetch = fetch(event.request)
+        .then(networkResponse => {
+
+          return caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+
+        })
+        .catch(() => cachedResponse);
+
+      // Devuelve primero cache (si existe)
+      return cachedResponse || networkFetch;
+
+    })
+
   );
+
 });
