@@ -1,6 +1,6 @@
 {
-  "name": "Catálogo de Materiales",
-  "short_name": "Catálogo de Materiales",
+  "name": "Catálogo",
+  "short_name": "Catálogo",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#000000",
