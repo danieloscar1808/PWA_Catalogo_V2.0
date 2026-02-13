@@ -57,6 +57,14 @@
       navigator.serviceWorker.register("sw.js");
     }
   </script>
+      <script>
+        window.addEventListener("load", function() {
+        setTimeout(function() {
+          document.getElementById("splash").style.display = "none";
+          document.getElementById("app").style.display = "block";
+          }, 3000); // 3000 milisegundos = 3 segundos
+      });
+      </script>
 
 </body>
 </html>
