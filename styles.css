@@ -18,13 +18,14 @@ body {
 }
 
 .header-logo {
-  width: 46px;
+  width: 60px;
+  height: auto;
   margin-right: 10px;
   filter: drop-shadow(0 0 6px #00e5ff);
 }
 
 .app-title {
-  font-size: 22px;
+  font-size: 28px;
   text-shadow: 0 0 6px #00e5ff;
 }
 
