@@ -169,5 +169,6 @@ select {
 }
 
 #splash img {
-  width: 150px;
+  width: 100%;
+  height: auto;
 }
