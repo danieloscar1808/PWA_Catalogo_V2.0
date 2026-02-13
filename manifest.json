@@ -1,6 +1,6 @@
 {
-  "name": "Catálogo Futurista 2.0",
-  "short_name": "Catálogo",
+  "name": "Catálogo de Materiales",
+  "short_name": "Catálogo de Materiales",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#000000",
