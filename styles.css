@@ -161,7 +161,7 @@ select {
 #splash {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: auto;
   background: black;
   display: flex;
   justify-content: center;
