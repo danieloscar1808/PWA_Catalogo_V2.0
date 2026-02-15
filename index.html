@@ -8,10 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <!-- Splash Screen -->
-  <div id="splash">
-      <img src="icon-1024x1024-splash.png" alt="Logo">
-  </div>
+ 
   <!-- Contenido principal -->
   <div id="app" style="display:none;">
       <!-- Tu aplicación aquí -->
@@ -57,15 +54,6 @@
     navigator.serviceWorker.register("sw.js");
   }
   </script>
-
-      <script>
-        window.addEventListener("load", function() {
-        setTimeout(function() {
-          document.getElementById("splash").style.display = "none";
-          document.getElementById("app").style.display = "block";
-          }, 600); // 3000 milisegundos = 3 segundos
-      });
-      </script>
 
 </body>
 </html>
