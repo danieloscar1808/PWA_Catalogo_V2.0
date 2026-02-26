@@ -18,13 +18,14 @@ body {
 }
 
 .header-logo {
-  width: 46px;
+  width: 40%;
+  height: auto;
   margin-right: 10px;
   filter: drop-shadow(0 0 6px #00e5ff);
 }
 
 .app-title {
-  font-size: 22px;
+  font-size: 26px;
   text-shadow: 0 0 6px #00e5ff;
 }
 
@@ -157,3 +158,4 @@ select {
   box-shadow: 0 0 18px #00e5ff;
   font-size: 15px;
 }
+

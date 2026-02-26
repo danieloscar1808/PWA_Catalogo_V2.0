@@ -2,15 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Catálogo - PWA</title>
+  <title>Catálogo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="app-header">
+ 
+  <!-- Contenido principal -->
+  <div id="app" style="display:none;">
+      <!-- Tu aplicación aquí -->
+  </div>
+   <header class="app-header">
     <img src="icon-192.png" class="header-logo" alt="logo">
-    <h1 class="app-title">Catálogo</h1>
+    <h1 class="app-title">Catálogo de Materiales</h1>
   </header>
 
   <main>
@@ -45,9 +50,9 @@
 
   <script src="app.js"></script>
   <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js");
-    }
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
   </script>
 
 </body>
