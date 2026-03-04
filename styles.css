@@ -3,7 +3,7 @@
 /* Fondo general */
 body {
   margin: 0;
-  background: #eac5a0;
+  background: #f8eadb;
   font-family: "Segoe UI", sans-serif;
   color: #1f2937;
 }
@@ -12,13 +12,17 @@ body {
 .app-header {
   display: flex;
   align-items: center;
+  gap: 10px;
   padding: 14px 16px;
   background: #1e3a5f;
   border-bottom: 1px solid #d1d5db;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-logo {
-  width: 30%;
+  width: 42%;
   height: auto;
   margin-right: 12px;
 }
