@@ -29,15 +29,29 @@ function renderItems() {
     const div = document.createElement("div");
     div.className = "item-card";
     div.innerHTML = `
-      <input class="inline-input" value="${item.name}" onchange="updateField(${i}, 'name', this.value)">
-      <input class="inline-input" type="number" value="${item.price}" onchange="updateField(${i}, 'price', this.value)">
-      <select class="inline-input" onchange="updateField(${i}, 'category', this.value)">
+      <div class="item-header">
+      <strong>${item.name}</strong>
+  </div>
+
+  <div class="item-row">
+      <label>Precio</label>
+      <input class="inline-input" type="number"
+      value="${item.price}"
+      onchange="updateField(${i}, 'price', this.value)">
+  </div>
+
+  <div class="item-row">
+      <label>Categoría</label>
+      <select class="inline-input"
+      onchange="updateField(${i}, 'category', this.value)">
         <option value="general"${item.category==="general"?" selected":""}>General</option>
-        <option value="aire acondicionado split"${item.category==="aire acondicionado split"?" selected":""}>Aire Acondicionado</option>
+        <option value="aire acondicionado split"${item.category==="aire acondicionado split"?" selected":""}>Aire acondicionado</option>
         <option value="eléctrico"${item.category==="eléctrico"?" selected":""}>Eléctrico</option>
         <option value="solar"${item.category==="solar"?" selected":""}>Solar</option>
       </select>
-      <button class="btn-delete" onclick="delItem(${i})">Eliminar</button>
+  </div>
+
+  <button class="btn-delete" onclick="delItem(${i})">Eliminar</button>
     `;
     cont.appendChild(div);
   });

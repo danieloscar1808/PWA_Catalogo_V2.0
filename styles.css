@@ -3,7 +3,7 @@
 /* Fondo general */
 body {
   margin: 0;
-  background: #f4f6f8;
+  background: #eac5a0;
   font-family: "Segoe UI", sans-serif;
   color: #1f2937;
 }
@@ -18,13 +18,13 @@ body {
 }
 
 .header-logo {
-  width: 40%;
+  width: 30%;
   height: auto;
   margin-right: 12px;
 }
 
 .app-title {
-  font-size: 22px;
+  font-size: 25px;
   color: white;
   font-weight: 600;
 }
@@ -131,5 +131,47 @@ button:hover {
   .row {
     flex-direction: column;
   }
+
+}
+
+.item-card{
+
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 16px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+
+}
+
+.item-header{
+
+  font-size: 18px;
+
+  margin-bottom: 12px;
+
+}
+
+.item-row{
+
+  margin-bottom: 10px;
+
+}
+
+.item-row label{
+
+  font-size: 13px;
+
+  color: #6b7280;
+
+  display: block;
+
+  margin-bottom: 4px;
 
 }
