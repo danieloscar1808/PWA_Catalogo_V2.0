@@ -33,15 +33,19 @@ window.onload = ()=>{
 };
 
 function renderItems() {
+  
+  catalogo.sort((a, b) => a.name.localeCompare(b.name, "es", { sensitivity: "base" }));
+
   const cont = document.getElementById("itemsList");
   cont.innerHTML = "";
+  
   catalogo.forEach((item, i) => {
     const div = document.createElement("div");
     div.className = "item-card";
     div.innerHTML = `
-      <div class="item-header">
+            <div class="item-header">
       <strong>${item.name}</strong>
-  </div>
+      </div>
 
   <div class="item-row">
       <label>Precio</label>
