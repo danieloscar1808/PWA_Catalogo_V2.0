@@ -172,3 +172,24 @@ button:hover {
 .file-loaded:hover{
   background: #15803d;
 }
+
+/* Botón flotante Exportar */
+#exportBtn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  left: auto;
+
+  background: #1e3a5f;
+  color: white;
+
+  border-radius: 30px;
+  padding: 12px 16px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 9999;
+}
+
+button.fab:hover{
+  background: #2b4a73;
+}
