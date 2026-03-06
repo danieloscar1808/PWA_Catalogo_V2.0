@@ -21,7 +21,10 @@
   <main>
     <section class="card">
       <h2>Importar Catálogo</h2>
-      <input type="file" id="importFile" accept="application/json">
+      <input type="file" id="importFile" accept="application/json" hidden>
+      <label for="importFile" id="fileLabel" class="file-button">
+        Seleccionar archivo JSON
+      </label>
     </section>
 
     <section class="card">
@@ -57,3 +60,4 @@
 
 </body>
 </html>
+

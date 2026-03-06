@@ -1,15 +1,25 @@
 let catalogo = [];
 
 document.getElementById("importFile").addEventListener("change", e=>{
+
   const file = e.target.files[0];
   if (!file) return;
+
+  // Mostrar nombre del archivo en el botón
+  const fileLabel = document.getElementById("fileLabel");
+  fileLabel.textContent = "✓ " + file.name;
+  fileLabel.classList.add("file-loaded");
+
   const reader = new FileReader();
+
   reader.onload = evt=>{
     try {
       catalogo = JSON.parse(evt.target.result);
       localStorage.setItem("catalogo", JSON.stringify(catalogo));
       renderItems();
-    } catch { alert("JSON inválido"); }
+    } catch {
+      alert("JSON inválido");
+    }
   };
   reader.readAsText(file);
 });
